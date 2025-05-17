@@ -28,7 +28,14 @@ def painel_educacional():
     acuracia = df.groupby("classe_ia")["acertou"].agg(["count", "mean"]).rename(columns={"count": "Total", "mean": "Acurácia"})
     st.dataframe(acuracia.round(2), use_container_width=True)
 
-    # Classe com maior erro
-    classe_erro = acuracia["Acurácia"].idxmin()
-    if len(df) > 0:
-        st.warning(f"📉 Classe com maior taxa de erro: **{classe_erro}**")
+    # Classe com maior erro (menor acurácia)
+    if len(df) > 0 and "Acurácia" in acuracia.columns:
+        col_acertos = pd.to_numeric(acuracia["Acurácia"], errors="coerce").dropna()
+
+        if not col_acertos.empty:
+            classe_erro = col_acertos.idxmin()
+            st.warning(f"📉 Classe com maior taxa de erro: **{classe_erro}**")
+        else:
+            st.info("Não há dados numéricos válidos para calcular a classe com mais erro.")
+    else:
+        st.info("Não há dados suficientes para análise de acurácia por classe.")
