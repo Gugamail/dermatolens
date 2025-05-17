@@ -1,6 +1,6 @@
 import streamlit as st
-from components.painel_educacional import *
+from components.painel_educacional import painel_educacional
 
 st.set_page_config(layout="wide")
 st.title("📚 Painel Educacional")
-main()
+painel_educacional()

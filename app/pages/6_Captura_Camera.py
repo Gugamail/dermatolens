@@ -7,7 +7,7 @@ from components.botao_encaminhamento import mostrar_botao_encaminhamento
 st.set_page_config(layout="wide")
 st.title("📸 Captura via Câmera")
 
-imagem = captura_camera()
+imagem = capturar_imagem_da_camera()
 if imagem:
     classe = st.selectbox("Classe predita", ["melanoma", "bcc", "scc", "ak", "nevus", "df", "infl", "outros"])
     confianca = st.slider("Confiança da IA", 0.0, 1.0, 0.8, 0.01)
