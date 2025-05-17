@@ -70,5 +70,6 @@ O DermatoLens é baseado em:
 
 ---
 
-Desenvolvido por **Clinica Dermatoligica Cecilia Leite** com base em dados públicos, código aberto e compromisso com o ensino.
+Desenvolvido por **Gustavo Leite** com base em dados públicos, código aberto e compromisso com o ensino.  
+Idealizado e coordenado pela **Professora Cecília Leite**, dermatologista e docente da Universidade de Pernambuco – Campus Serra Talhada.
 """)
